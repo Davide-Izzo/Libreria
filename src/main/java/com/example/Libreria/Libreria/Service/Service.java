@@ -50,7 +50,7 @@ public class Service{
 		try {
 			System.out.println("id Libro: "+LId);
 			System.out.println("id Persona: "+PId);
-
+			//commento per git
 			// trovo libro e persona con id corrispondente
 			Optional<Libro> l1 = libroRepo.findById(LId);
 			Optional <Persona> p1 = personaRepo.findById(PId);
