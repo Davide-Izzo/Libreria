@@ -3,7 +3,9 @@ package com.example.Libreria.Libreria.Entity;
 
 import java.time.LocalDateTime;
 
+import org.antlr.v4.runtime.misc.NotNull;
 
+import jakarta.annotation.Nonnull;
 import jakarta.persistence.Column;
 
 import jakarta.persistence.Entity;
@@ -14,6 +16,7 @@ import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
 import jakarta.persistence.MapsId;
 import jakarta.persistence.Table;
+import jakarta.validation.constraints.NotBlank;
 
 @Table(name= "noleggio")
 @Entity

@@ -3,21 +3,29 @@ package com.example.Libreria.Libreria.Controller;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.RestControllerAdvice;
 
 import com.example.Libreria.Libreria.Entity.Noleggio;
 import com.example.Libreria.Libreria.Repository.NoleggioRepo;
 import com.example.Libreria.Libreria.Service.Service;
 
-@RestController
+import jakarta.validation.Valid;
+import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.NotEmpty;
+
+@RestControllerAdvice
 public class OperazioniController {
 
 	@Autowired
 	private Service s1;
 	@Autowired
 	private NoleggioRepo noleggioRepo;
+	
+	
 
 	//inserire id libro e id persona
 	@PostMapping(value = "/noleggiaLibro/{LId}/{PId}")

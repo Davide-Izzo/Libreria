@@ -14,6 +14,10 @@ import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
 import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
+import jakarta.validation.constraints.Min;
+import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.NotNull;
+import jakarta.validation.constraints.Size;
 
 @Table(name = "libro")
 @Entity
@@ -23,12 +27,18 @@ public class Libro {
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private int id;
 	
+	@NotBlank(message="titolo obbligatorio")
+	@Size(min = 2, max = 20)
 	@Column
 	private String titolo;
 	
+	@NotBlank(message = "categoria obbligatoria")
+	@Size(min = 2, max = 20)
 	@Column
 	private String categoria;
 	
+	@NotNull
+	@Min(1)
 	@Column
 	private double prezzo;
 	
